@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<table class="table table-bordered mt-4">
+    <thead>
+      <tr>
+        <th>会員ID</th>
+        <th>姓</th>
+        <th>名</th>
+        <th>年齢</th>
+        <th>会員種別</th>
+        <th>会費合計</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for myapp in myapp_list %}
+      <tr>
+        <th>{{ myapp.id }}</th>
+        <td>{{ myapp.last_name }}</td>
+        <td>{{ myapp.first_name }}</td>
+        <td>{{ myapp.age }}</td>
+        <td>{{ myapp.membership_type }}</td>
+        <td>{{ myapp.total_fee }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
